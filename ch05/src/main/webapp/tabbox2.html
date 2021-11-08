@@ -56,6 +56,51 @@ ul, ol {
 <script>
 	/* DOM Level 1 Event 처리: element의 event 속성에 자바스크립트 코드 사용하는 방법 */
 	// 2) JavaScript Code(DOM API) 로만 작성하기
+	var onTabClicked = function() {
+		console.log("click!!! - " + this.innerText);
+		// unselect
+		var lisSelected = document.getElementsByClassName("selected");
+		/* 
+			NodeList는 element.childNodes와 같은 속성 또는 document.querySelectorAll()와 같은 메서드에 의해 반환되는 Node Collection이다.
+			이는 배열 형태를 하고 있지만 배열이 아닌 유사 배열이라 한다.
+			대개 NodeList는 라이브(Live) 콜렉션으로 DOM의 변경 사항을 실기간으로 반영하지만, 
+			document.querySelectorAll()과 같은 메서드에 의해 NodeList는 정적(Static) 콜렉션으로 DOM의 변경사항이 실시간으로 반영되지 않는다.
+		*/
+		/* 
+			HTMLCollection 인터페이스는 요소의 문서 내 순서대로 정렬된 일반 컬렉션을 나타내며 이도 유사 배열이다.
+			element.chidren과 같은 속성 또는 document.getElementsByClassName(), document.getElementsByTagName()과 같은 메소드에 의해 반환된다.
+			모든 HTMLCollection은 문서가 바뀔 때 실시간으로 업데이트되는 라이브(Live) 콜렉션이다.
+		*/
+		(lisSelected.length === 1) && (lisSelected[0].className = '');
+		// if(lisSelected.length === 1){
+			// lisSelected[0].className = '';
+		// }
+		
+		// select
+		this.className = "selected";
+	}
+	window.onload = function() {
+		console.log("DOM loaded!");
+/* 		var divTabBox = document.getElementsByClassName("tab-box");		// className이 tab-box인 element를 불러옴
+		console.log(divTabBox[0].childNodes); 							// divTabBox에서 첫번째 element(className이 tab-box인 요소 중 첫번째 요소)의 자식의 node를 불러옴 */
+		var divTabBox = document.getElementsByClassName("tab-box")[0];		// className이 tab-box인 element 중 첫번째 element를 불러옴
+		console.log(divTabBox.childNodes);
+		
+		var ul = divTabBox.childNodes[1];
+		console.log(ul);
+		var liTabs = ul.getElementsByTagName("li");
+		console.log(liTabs);
+		
+		for(var i=0; i<liTabs.length; i++){
+			/*
+			이렇게하면 li 하나하나에 함수가 생성됨 ㅠㅠ
+			liTabs[i].onclick = function() {
+			} 
+			*/
+			liTabs[i].onclick = onTabClicked;
+			
+		}
+	}
 </script>
 </head>
 <body>
