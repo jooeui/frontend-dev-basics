@@ -15,6 +15,7 @@
 		child.moveTo(0, 0);
 		child.resizeTo(widthScreen, heightScreen);
 		setInterval(function(){
+			// 0.1초 마다 가운데를 기준으로 사이즈 줄이기
 			child.resizeBy(-20, -20);
 			child.moveBy(10, 10);
 		}, 100);
