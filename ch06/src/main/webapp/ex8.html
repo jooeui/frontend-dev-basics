@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+window.addEventListener("load", function(){
+	var imgElement = document.createElement("img");
+	imgElement.src = "https://lh3.googleusercontent.com/proxy/GeBtL7IoWXWKIA4h0MbzT50PixTbcuMLJ4V7UogYTL_rEN-tbcDzwt6WOvFzsegp0gPhHa4DAijo2SATtcWBtTgbWTbAGmoJUnlur8djPJKEcYhWo9-DvBgXK47Eunv2d26RXud1B3GpbOBpxkxJ3g";
+	imgElement.alt = "아르세우스";
+	imgElement.title = "아르세우스!";
+	imgElement.style.width = "200px";
+	imgElement['data-no'] = 10; /* 비표준 속성(property가 되지 않는다!!!) */
+	
+	setTimeout(function(){
+		document.body.appendChild(imgElement);
+		console.log(document.getElementById('h')['data-no']);
+	}, 3000);
+});
+</script>
+</head>
+<body>
+	<h1 id="h">DOM(Dom Object Model)</h1>
+	<h2>3. HTML Element 속성 조작하기</h2>
+</body>
+</html>
