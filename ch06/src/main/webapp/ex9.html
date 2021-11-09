@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+window.addEventListener("load", function(){
+	var imgElement = document.createElement("img");
+	
+	// (표준(prop o) + 비표준(prop x)) 속성 읽기/쓰기 - setAttribute/getAttribute를 사용한다.
+	imgElement.setAttribute('src', 'https://lh3.googleusercontent.com/proxy/GeBtL7IoWXWKIA4h0MbzT50PixTbcuMLJ4V7UogYTL_rEN-tbcDzwt6WOvFzsegp0gPhHa4DAijo2SATtcWBtTgbWTbAGmoJUnlur8djPJKEcYhWo9-DvBgXK47Eunv2d26RXud1B3GpbOBpxkxJ3g');
+	imgElement.setAttribute('alt', '아르세우스');
+	imgElement.setAttribute('title', '아르세우스!');
+	imgElement.setAttribute('style', 'width = 200px');
+	imgElement['data-no'] = 20;						/* property */
+	imgElement.setAttribute('data-no', 10); 		/* 비표준 속성(property가 되지 않는다!!!) */
+	
+	setTimeout(function(){
+		document.body.appendChild(imgElement);
+		console.log(imgElement['data-no']);
+		console.log(imgElement.getAttribute('data-no'));
+	}, 3000);
+});
+</script>
+</head>
+<body>
+	<h1>DOM(Document Object Model)</h1>
+	<h2>3. HTML Element 속성 조작하기2</h2>
+</body>
+</html>
