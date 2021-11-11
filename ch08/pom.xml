@@ -12,10 +12,8 @@
 
 	<properties>
 		<org.springframework-version>4.3.4.RELEASE</org.springframework-version>
-		<jcloverslf4j.version>1.7.6</jcloverslf4j.version>
-		<logback.version>1.1.1</logback.version>
 	</properties>
-
+	
 	<dependencies>
 		<!-- Spring Context(Container) -->
 		<dependency>
@@ -30,7 +28,7 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
-
+		
 		<!-- Spring Web -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -38,44 +36,43 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 
+		<!-- jstl -->
+		<dependency>
+		    <groupId>jstl</groupId>
+		    <artifactId>jstl</artifactId>
+		    <version>1.2</version>
+		</dependency>
+		
 		<!-- jackson -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 			<version>2.9.8</version>
 		</dependency>
-
+		
 		<!-- jaxb -->
 		<dependency>
-			<groupId>javax.xml.bind</groupId>
-			<artifactId>jaxb-api</artifactId>
-			<version>2.3.1</version>
+		    <groupId>javax.xml.bind</groupId>
+		    <artifactId>jaxb-api</artifactId>
+		    <version>2.3.1</version>
 		</dependency>
 		<dependency>
-			<groupId>com.sun.xml.bind</groupId>
-			<artifactId>jaxb-impl</artifactId>
-			<version>2.3.1</version>
+		    <groupId>com.sun.xml.bind</groupId>
+		    <artifactId>jaxb-impl</artifactId>
+		    <version>2.3.1</version>
 		</dependency>
 		<dependency>
-			<groupId>org.javassist</groupId>
-			<artifactId>javassist</artifactId>
-			<version>3.25.0-GA</version>
+		    <groupId>org.javassist</groupId>
+		    <artifactId>javassist</artifactId>
+		    <version>3.25.0-GA</version>
 		</dependency>
-		
 		<!-- istack-commons-runtime -->
 		<dependency>
-			<groupId>com.sun.istack</groupId>
-			<artifactId>istack-commons-runtime</artifactId>
-			<version>4.0.0</version>
-		</dependency>
-
-		<!-- jstl -->
-		<dependency>
-			<groupId>jstl</groupId>
-			<artifactId>jstl</artifactId>
-			<version>1.2</version>
-		</dependency>
-
+		    <groupId>com.sun.istack</groupId>
+		    <artifactId>istack-commons-runtime</artifactId>
+		    <version>4.0.0</version>
+		</dependency>				
+								
 		<!-- Servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -90,7 +87,7 @@
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
-
+			
 	<build>
 		<finalName>ch08</finalName>
 		<plugins>
@@ -104,7 +101,7 @@
 					<username>admin</username>
 					<password>manager</password>
 				</configuration>
-			</plugin>
-		</plugins>
+			</plugin>		
+		</plugins>		
 	</build>
 </project>
