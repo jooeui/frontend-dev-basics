@@ -12,7 +12,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath }/ejs/ejs.js"></script>
 <script>
 	var listEJS = new EJS({		// 동기 통신
-		url: "${pageContext.request.contextPath }/ejs/listitem-template.ejs"
+		url: "${pageContext.request.contextPath }/ejs/list-template.ejs"
 	});
 	
 	var startNo;
