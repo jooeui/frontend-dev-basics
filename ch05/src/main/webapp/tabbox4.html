@@ -53,11 +53,16 @@ ul, ol {
 	line-height: 200px;
 }
 </style>
-<script type="text/javascript" src="tabbox.js"></script>
-<script>tabBox.init();</script>
+<script type="text/javascript" src="jquery/jquery-3.6.0.js"></script>
 <script>
-	window.addEventListener("load", function(){
-		console.log("dom loaded!!!!!");
+	$(function() {
+		$(".tab-box ul li"). click(function(){
+			// unselect
+			$(".tab-box ul li.selected").removeClass("selected");
+			
+			// select
+			$(this).addClass("selected");
+		});
 	});
 </script>
 </head>
@@ -65,10 +70,10 @@ ul, ol {
 	<div class="tab-box">
 		<ul>
 			<li>메뉴 5</li>
-	        <li>메뉴 4</li>
-	        <li>메뉴 3</li>
-	        <li>메뉴 2</li>
-	        <li>메뉴 1</li>
+			<li>메뉴 4</li>
+			<li>메뉴 3</li>
+			<li>메뉴 2</li>
+			<li>메뉴 1</li>
 		</ul>
 		<div>탭뷰입니다.</div>
 	</div>
